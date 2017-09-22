@@ -61,3 +61,19 @@ docker-compose run --rm app rails db:seed
 docker-compose exec app rails c
 docker-compose run --rm app rails c
 ```
+
+
+## Run or test using image from DockerHub
+
+Do this if you don't want to make any application code change and just run the application using the docker image from docker hub. 
+
+Before executing the below commands, review dc-stage.yml and edit to update host port if needed.
+
+```
+docker-compose -f dc-stage.yml up
+# and on a seperate terminal
+docker-compose -f dc-stage.yml exec app rails db:migrate
+docker-compose -f dc-stage.yml exec app rails db:seed
+```
+
+This runs in production environment mode and should be available on http://localhost:3002/notes

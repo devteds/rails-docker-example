@@ -1,6 +1,6 @@
 version: '3'
 services:
-  db:
+  db1:
     image: mysql:5.7
     restart: always
     environment:
@@ -21,4 +21,4 @@ services:
       DB_USER: root
       DB_NAME: noteapp
       DB_PASSWORD: password
-      DB_HOST: db
+      DB_HOST: db1
